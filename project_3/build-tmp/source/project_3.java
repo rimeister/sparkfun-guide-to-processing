@@ -26,12 +26,14 @@ class Circle {
 	int c;
 	int x;
 	int y;
-	int speed;
+	int speedX;
+	int speedY;
 
-	Circle (int tempX,int tempY,int tempSpeed,int tempColor) {
+	Circle (int tempX,int tempY,int tempSpeedX,int tempSpeedY,int tempColor) {
 		x = tempX;
 		y = tempY;
-		speed = tempSpeed;
+		speedX = tempSpeedX;
+		speedY = tempSpeedY;
 		c = tempColor;
 	}
 
@@ -54,20 +56,25 @@ public void setup() {
 	int green = color(0,250,0);
 	int blue = color(0,0,250);
 	circles = new Circle[3];
-	circles[0] = new Circle(400,200,1,red);
-	circles[1] = new Circle(300,400,2,green);
-	circles[2] = new Circle(200,600,3,blue);
+	circles[0] = new Circle(400,200,1,1,red);
+	circles[1] = new Circle(300,400,2,2,green);
+	circles[2] = new Circle(200,600,3,3,blue);
 }
 
 // Draw loop
 public void draw() {
 
 	for (Circle circ : circles) {
-		circ.x += circ.speed;
-		circ.y += circ.speed;
-		if (circ.x >= width - 25 || circ.x <= 25 || circ.y >= height - 25 || circ.y <= 25) {
-			circ.speed *= -1;
+		if (circ.x >= width - 25 || circ.x <= 25) {
+			circ.speedX *= -1;
 		}
+
+		if (circ.y >= height - 25 || circ.y <= 25) {
+			circ.speedY *= -1;
+		}
+
+		circ.x += circ.speedX;
+		circ.y += circ.speedY;
 		circ.display();
 	}
 
