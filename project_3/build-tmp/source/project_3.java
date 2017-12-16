@@ -31,10 +31,16 @@ public void setup() {
 }
 
 public void draw() {
-	background(150);
+	background(150); // Re-renders background each frame to remove trail
 	fill(250,0,0);
 	ellipse(x,400,100,100);
-	x++;
+	x += grow;
+
+	if (x >= width) {
+		print("x is greater than width");
+		grow = grow * -1;
+	}
+
 }
   public void settings() { 	size(800,800); 	smooth(); }
   static public void main(String[] passedArgs) {
