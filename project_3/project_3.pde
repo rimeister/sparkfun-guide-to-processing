@@ -4,47 +4,54 @@
 /******************************************/
 /******************************************/
 
+// Classes
+class Circle {
+
+	color c;
+	int x;
+	int y;
+	int speed;
+
+	Circle (int tempX,int tempY,int tempSpeed,color tempColor) {
+		x = tempX;
+		y = tempY;
+		speed = tempSpeed;
+		c = tempColor;
+	}
+
+	void display(){
+		stroke(c);
+		ellipse(x,y,50,50);
+	}
+
+}
 
 // Global Variables
-int x1 = 400;
-int x2 = 300;
-int x3 = 200;
+Circle[] circles; // Array of circles
 
-int grow1 = 1;
-int grow2 = 1;
-int grow3 = 1;
-
+// Setup
 void setup() {
 	size(800,800);
 	background(150);
 	smooth(); // Smooth edges of shapes
+	color red = color(255,0,0);
+	color green = color(0,250,0);
+	color blue = color(0,0,250);
+	circles = new Circle[3];
+	circles[0] = new Circle(400,200,1,red);
+	circles[1] = new Circle(300,400,2,green);
+	circles[2] = new Circle(200,600,3,blue);
 }
 
+// Draw loop
 void draw() {
 
-	stroke(250,0,0);
-	ellipse(x1,200,50,50);
-
-	stroke(0,250,0);
-	ellipse(x2,400,50,50);
-
-	stroke(0,0,250);
-	ellipse(x3,600,50,50);
-
-	x1 += grow1;
-	x2 += grow2;
-	x3 += grow3;
-
-	if (x1 >= width - 25 || x1 <= 25) {
-		grow1 *= -1;
-	}
-
-	if (x2 >= width - 25 || x2 <= 25) {
-		grow2 *= -1;
-	}
-
-	if (x3 >= width - 25 || x3 <= 25) {
-		grow3 *= -1;
+	for (Circle circ : circles) {
+		circ.x += circ.speed;
+		if (circ.x >= width - 25 || circ.x <= 25) {
+			circ.speed *= -1;
+		}
+		circ.display();
 	}
 
 }
