@@ -64,7 +64,8 @@ public void draw() {
 
 	for (Circle circ : circles) {
 		circ.x += circ.speed;
-		if (circ.x >= width - 25 || circ.x <= 25) {
+		circ.y += circ.speed;
+		if (circ.x >= width - 25 || circ.x <= 25 || circ.y >= height - 25 || circ.y <= 25) {
 			circ.speed *= -1;
 		}
 		circ.display();
