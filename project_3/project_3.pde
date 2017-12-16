@@ -20,9 +20,8 @@ void draw() {
 	ellipse(x,400,100,100);
 	x += grow;
 
-	if (x >= width) {
-		print("x is greater than width");
-		grow = grow * -1;
+	if (x >= width || x <= 0) {
+		grow *= -1;
 	}
 
 }
