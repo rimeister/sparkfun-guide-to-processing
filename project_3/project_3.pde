@@ -11,11 +11,11 @@ int grow = 5;
 
 void setup() {
 	size(800,800);
-	background(150);
 	smooth(); // Smooth edges of shapes
 }
 
 void draw() {
+	background(150);
 	fill(250,0,0);
 	ellipse(x,400,100,100);
 	x++;

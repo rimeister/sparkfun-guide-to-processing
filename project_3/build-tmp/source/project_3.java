@@ -27,11 +27,11 @@ int grow = 5;
 
 public void setup() {
 	
-	background(150);
 	 // Smooth edges of shapes
 }
 
 public void draw() {
+	background(150);
 	fill(250,0,0);
 	ellipse(x,400,100,100);
 	x++;
