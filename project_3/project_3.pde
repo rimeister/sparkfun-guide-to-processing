@@ -20,7 +20,7 @@ void draw() {
 	ellipse(x,400,100,100);
 	x += grow;
 
-	if (x >= width || x <= 0) {
+	if (x >= width - 50 || x <= 50) {
 		grow *= -1;
 	}
 
