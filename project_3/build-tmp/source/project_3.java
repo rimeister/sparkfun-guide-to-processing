@@ -56,9 +56,9 @@ public void setup() {
 	int green = color(0,250,0);
 	int blue = color(0,0,250);
 	circles = new Circle[3];
-	circles[0] = new Circle(400,200,1,1,red);
-	circles[1] = new Circle(300,400,2,2,green);
-	circles[2] = new Circle(200,600,3,3,blue);
+	circles[0] = new Circle(400,200,1,2,red);
+	circles[1] = new Circle(300,400,2,3,green);
+	circles[2] = new Circle(200,600,3,4,blue);
 }
 
 // Draw loop
