@@ -58,7 +58,7 @@ public void setup() {
 	circles = new Circle[3];
 	circles[0] = new Circle(400,200,1,2,red);
 	circles[1] = new Circle(300,400,2,3,green);
-	circles[2] = new Circle(200,600,3,4,blue);
+	circles[2] = new Circle(200,600,40,4,blue);
 }
 
 // Draw loop
