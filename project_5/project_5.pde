@@ -5,7 +5,7 @@ void setup() {
 void draw() {
 	background(255);
 
-	if ( mouseX == pmouseX || mouseY == pmouseY) {
+	if ( mouseX == pmouseX || mouseY == pmouseY) { // See if current mouse coord is same as previous frame
 		noStroke();
 		pushMatrix();
 		translate(mouseX,mouseY);
