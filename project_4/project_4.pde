@@ -3,8 +3,6 @@ void setup() {
 	background(150);
 }
 
-int i = 1; 
-
 void draw() {
 	// Box that moves every second
 	fill( second() * 4,0,0 );
@@ -17,21 +15,5 @@ void draw() {
 	// Box that moves every hours
 	fill( 0,0,hour() * 4 );
 	rect( hour() * 4,40,50,50 );	
-
-	if ( i == 1 ) {
-
-		print( "The number of seconds is " + second() + "\n" );
-		print( "The number of minutes is " + minute() + "\n" );
-
-	}
-
-	print(i + "\n");
-
-	i++;
-
-	if ( i == 60 ) {
-		i = 1;
-	}
-
 
 }
