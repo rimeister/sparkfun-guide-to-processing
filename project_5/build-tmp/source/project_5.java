@@ -23,11 +23,15 @@ public void draw() {
 	noStroke();
 	pushMatrix();
 	translate(mouseX,mouseY);
+	if ( mouseX == pmouseX || mouseY == pmouseY) {
+		rotate(second());
+	}
 	fill(255,0,0);
 	ellipse(0,0,25,25);
 	ellipse(0,25,25,25);
 	ellipse(0,50,25,25);
-	popMatrix();
+	popMatrix();	
+
 }
   public void settings() { 	size(250,250); }
   static public void main(String[] passedArgs) {
