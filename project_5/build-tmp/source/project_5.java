@@ -19,8 +19,10 @@ public void setup() {
 }
 
 public void draw() {
+	background(255);
+	noStroke();
 	pushMatrix();
-	translate(width/2,height/2);
+	translate(mouseX,mouseY);
 	fill(255,0,0);
 	ellipse(0,0,25,25);
 	ellipse(0,25,25,25);
